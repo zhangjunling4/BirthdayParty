@@ -8,4 +8,10 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="WelStyle" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/wel</item>
+    </style>
+    <style name="WSplashStyle" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash</item>
+    </style>
 </resources>
