@@ -20,28 +20,28 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="@dimen/dp_30"
+        android:layout_marginBottom="@dimen/dp_40"
         android:layout_marginLeft="@dimen/dp_30"
         android:gravity="center"
         android:layout_marginRight="@dimen/dp_30">
 
         <ImageView
+            android:id="@+id/qq_login"
             android:layout_width="@dimen/dp_30"
             android:layout_height="@dimen/dp_30"
-            android:background="@drawable/qq"
-            android:onClick="qqLogin"/>
+            android:background="@drawable/qq"/>
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/wechat_login"
             android:layout_width="@dimen/dp_30"
             android:layout_height="@dimen/dp_30"
             android:layout_marginLeft="@dimen/dp_80"
-            android:background="@drawable/wechat"
-            android:onClick="weChatLogin"/>
+            android:background="@drawable/wechat"/>
 
     </LinearLayout>
 
     <ImageView
+        android:id="@+id/iv_line"
         android:layout_above="@+id/ll_login"
         android:layout_marginBottom="@dimen/dp_10"
         android:layout_marginLeft="@dimen/dp_50"
@@ -49,4 +49,12 @@
         android:layout_width="wrap_content"
         android:layout_height="10dp"
         android:background="@drawable/line"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/iv_line"
+        android:text="@string/wel_login"
+        android:textColor="@color/colorPrimaryDark"/>
 </RelativeLayout>

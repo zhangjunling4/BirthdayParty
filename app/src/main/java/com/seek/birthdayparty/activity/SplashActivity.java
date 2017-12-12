@@ -7,12 +7,13 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.seek.birthdayparty.R;
+import com.seek.birthdayparty.base.BaseActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class SplashActivity extends AppCompatActivity {
+public class SplashActivity extends BaseActivity {
 
     @BindView(R.id.tv_skip)
     TextView tvSkip;
@@ -20,12 +21,13 @@ public class SplashActivity extends AppCompatActivity {
     private CountDownTimer timer;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_splash);
+    protected int getContentViewLayoutID() {
+        return R.layout.activity_splash;
+    }
 
-        ButterKnife.bind(this);
 
+    @Override
+    protected void initViewsAndEvents() {
         timer = new CountDownTimer(3500, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
@@ -50,5 +52,14 @@ public class SplashActivity extends AppCompatActivity {
         }
         startActivity(new Intent(SplashActivity.this, WelActivity.class));
         finish();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        if (timer != null){
+            timer.cancel();
+        }
     }
 }
